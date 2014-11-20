@@ -1,8 +1,7 @@
 FORMAT: 1A
 
-# TheyHasItAPI
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
-
+# They Has It API Docs
+Test
 
 ##Allowed HTTPs requests:
 
@@ -25,45 +24,38 @@ Notes API is a *short texts saving* service similar to its physical paper presen
 - 503 `Service Unavailable` - The service is temporary unavailable (e.g. scheduled Platform Maintenance). Try again later.
 
 
+## /item/{itemId}
+### GET
+Retrieves details of an item.
 
-# Group Notes
-Notes related resources of the **Notes API**
++ Request 
+    + Headers
 
-## Notes Collection [/notes]
-### List all Notes [GET]
-+ Response 200 (application/json)
+            Accept: application/json
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
-
-### Create a Note [POST]
-+ Request (application/json)
-
-        { "title": "Buy cheese and bread for breakfast." }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
-
-### Retrieve a Note [GET]
-+ Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
++ Response 200 
 
     + Body
-
-            { "id": 2, "title": "Pick-up posters from post-office" }
-
-### Remove a Note [DELETE]
-+ Response 204
+    
+              {
+                 "accountSetting" : {
+                   "country" : "cz",
+                   "firstName" : "Name",
+                   "ssoProvider" : null,
+                   "timezone" : null,
+                   "position" : "",
+                   "authenticationModes" : [],
+                   "companyName" : "GoodData",
+                   "login" : "email@gooddata.com",
+                   "email" : "email@gooddata.com",
+                   "created" : "2011-08-10 08:37:46",
+                   "updated" : "2014-04-11 01:18:07",
+                   "lastName" : "Lastname",
+                   "phoneNumber" : "7755441225",
+                    "links" : {
+                        "self" : "/gdc/account/profile/{profile-id}",
+                        "projects" : "/gdc/account/profile/{profile-id}/projects"
+                              }
+                        }
+                }
+                
